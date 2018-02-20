@@ -19,7 +19,9 @@ class TotalViolations
   end
 
   def types
-    @violations.values.map {|violation| violation.violation_type}
+    @violations.values.map do |violation|
+        violation.violation_type
+      end.uniq
   end
 
   def count(type)
